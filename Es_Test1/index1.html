@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Footprint Website</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+  <style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+      background-image: url("https://media.gettyimages.com/id/1167980602/video/slow-motion-wind-blowing-through-meadow.jpg?s=640x640&k=20&c=pivVN_pmhZBNj9BohNGbAUZlavFYi2reFnr5Yr3OjrA=");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Adjust these styles for card elements */
+    .card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 20px;
+    width: 150%; /* Adjust the width as needed */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    text-align: left; /* Align text to the left */
+    margin-left: 95%;
+    }
+
+    .card-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 10px;
+    }
+
+    .card-body {
+      font-size: 1rem;
+      padding: 0px;
+    }
+  
+  /* Header styles */
+  .header {
+    padding: 40px 0;
+    text-align: center;
+    background-image: url("images\grass.jpg"); /* Adjust image path */
+    background-size: cover; /* Ensure image fills the entire header area */
+    background-position: center; /* Center the image horizontally */
+    color: #fff; /* White text for better readability on the background */
+  }
+  
+  .header h1 {
+    font-size: 3rem; /* Adjust header size for better scaling */
+    margin-bottom: 0; /* Remove extra bottom margin */
+    font-family: serif; /* Consider a serif font for headers */
+  }
+  
+  /* Navigation styles (assuming you're using Bootstrap) */
+  .navbar {
+    background-color: #fff; /* Use a light color for the navigation bar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .navbar-brand {
+    font-weight: bold; /* Emphasize the website name */
+  }
+  
+  .navbar-nav {
+    justify-content: space-between; /* Distribute links evenly */
+  }
+  
+  .navbar-nav li {
+    margin-left: 20px; /* Add spacing between links */
+  }
+  
+  /* Content section styles */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0; /* Add margin for separation */
+  }
+  
+  .side {
+    flex: 1; /* Make the side section take up half the space */
+    padding: 20px;
+    background-color: #fff; /* Use white background for better contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .main {
+    flex: 2; /* Make the main section take up twice the space */
+    padding: 20px;
+    background-color: #fff; /* Use white background for better contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .side h2, .main h2 {
+    font-size: 2rem; /* Adjust heading size for better hierarchy */
+    margin-bottom: 15px; /* Add spacing after headings */
+    color: #333; /* Use base text color */
+  }
+  
+  .side p, .main p {
+    font-size: 1rem; /* Adjust paragraph size for readability */
+    line-height: 1.5; /* Improve line spacing for better reading flow */
+    color: #333; /* Use base text color */
+  }
+  
+  .fakeimg2, .fakeimg3 {
+    background-size: cover; /* Ensure images fill their container areas */
+    background-position: center; /* Center the images horizontally */
+    margin-bottom: 20px; /* Add spacing after images */
+  }
+  
+  /* List styles */
+  ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+  }
+  
+  /* Footer styles */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text for readability */
+  }
+  
+  .footer h1 {
+    font-size: 1rem; /* Adjust footer text size */
+    margin: 0;
+    opacity: 0;
+  }
+  .fakeimg2, .fakeimg3 {
+    height: 300px; /* Set a fixed height for images */
+  }
+
+  .announcement-header {
+    color: white;
+  }
+
+  .announcement-subheader {
+    color: white;
+  }
+
+  .leading-relaxed {
+    font: bold;
+    color: white;
+  }
+  
+  </style>
+</head>
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Team Green</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="announcement-panel">
+          <div class="card-header"><b>
+          <h1 class="announcement-header">What is your carbon footprint?</h1>
+          <h3 class="announcement-subheader">Find out now with this simple calculator</h3>
+        </b>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-10 col-lg-4">
+          <div class="card">
+          <div id="form">
+            <form>
+              <h3 id="home-energy-label"><i class="fa fa-home" aria-hidden="true"></i> Home Energy</h3>	
+              <div class="form-group">
+                <label for="electric">Monthly electric bill</label>
+                <div class="input-group">
+                  <div class="input-group-addon">₹</div>
+                  <input class="form-control" id="electric" type="number" min="0" step="0.01">
+                </div>
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="gas">Monthly natural gas bill</label>
+                <div class="input-group">
+                  <div class="input-group-addon">₹</div>
+                  <input class="form-control" id="gas" type="number" min="0" step="0.01">
+                </div>
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="oil">Monthly oil bil</label>
+                <p><i>Somes homes use oil as a fuel source for heating furnances or boilers, and is often abbreviated as HHO.</i></p>
+                <div class="input-group">
+                  <div class="input-group-addon">₹</div>
+                  <input class="form-control" id="oil" type="number" min="0" step="0.01">
+                </div>
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <br/>
+              <h3 class="form-section-label" id="travel-label"><i class="fa fa-globe" aria-hidden="true"></i> Travel</h3>
+              <div class="form-group">
+                <label for="car">Annual miles driven on your car</label>
+                <input class="form-control" id="car" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="flights-4-less">Number of flights taken in the past year (4 hours or less)</label>
+                <input class="form-control" id="flights-4-less" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="flights-4-more">Number of flights taken in the past year (4 hours or more)</label>
+                <input class="form-control" id="flights-4-more" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <br/>
+              <h3 class="form-section-label" id="travel-label"><i class="fa fa-globe" aria-hidden="true"></i> Others</h3>
+              <div class="form-group">
+                <label for="Food">Amount of Food and Drinks consumed: </label>
+                <input class="form-control" id="Food" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="Med">Amount of Medicines: </label>
+                <input class="form-control" id="Med" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="IT">Amount of Computers used: </label>
+                <input class="form-control" id="IT" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="Bank">Amount used in Banking/Finance: </label>
+                <input class="form-control" id="Bank" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="Edu">Amount used in Education: </label>
+                <input class="form-control" id="Edu" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <div class="form-group">
+                <label for="Rec">Amount used in Recreation: </label>
+                <input class="form-control" id="Rec" type="number" min="0" step="1">
+                <span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+              </div>
+              <h3 class="form-section-label" id="waste-label"><i class="fa fa-recycle" aria-hidden="true"></i> Waste</h3>
+              <div class="form-group">
+                <label>Do you recycle newspaper?</label>
+                <div class="alert alert-danger" role="alert" id="newspaper-alert"><strong>Oops!</strong> You need to make a selection.</div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="newspaperOptionsRadios" id="optionsRadio1" value="option1">
+                    Yes
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="newspaperOptionsRadios" id="optionsRadio2" value="option2">
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Do you recycle aluminum and tin?</label>
+                <div class="alert alert-danger" role="alert" id="alum-tin-alert"><strong>Oops!</strong> You need to make a selection.</div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="alumtinOptionsRadios" id="optionsRadio3" value="option3">
+                    Yes
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="alumtinOptionsRadios" id="optionsRadio4" value="option4">
+                    No
+                  </label>
+                </div>
+              </div>
+              <br/>
+              <button id="calculate-btn" type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+            </form>
+            </div>
+          </div>
+          
+  
+          <div id="results" class="text-center">
+            <div class="card">
+            <h1 id="score"></h1>
+            <br/>
+            <p class="lead">This number represents the amount of greenhouse gases in units of carbon dioxide you emit per year</p>
+            <br/>
+            <h5 class="bg-success score-info">438,000 or below is EXCELLENT</h5>
+            <h5 class="bg-info score-info">438,000 to 1,167,927 is GOOD</h5>
+            <h5 class="bg-warning score-info">1,167,927 to 1,606,000 is AVERAGE</h5>
+            <h5 class="bg-danger score-info">1,606,000 or above is BAD</h5>
+            <br/>
+            <br/>
+            <br/>
+            <button id="recalculate-btn" type="button" class="btn btn-success btn-lg btn-block">Recalculate</button>
+            <br>
+             <table class="calcgraph" style="margin: auto;">
+            <tbody><tr class="calcgraph">
+              <td class="calcgraph"><img src="images/blackfoot2.gif" width="105" height="38" alt="Your footprint is 0.32 metric tons per year"></td>
+              <td class="calcgraph"><img src="images/blackfoot1.gif" width="105" height="208" alt="The average footprint for people in India is 1.73 metric tons"></td>
+              <td class="calcgraph"><img src="images/blackfoot.gif" width="105" height="240" alt="The worldwide target to combat climate change is 2 metric tons"></td>
+          </tr>
+          <tr class="calcgraph">
+              <th class="calcgraph">Your<br>Footprint</th><th class="calcgraph">Country<br>Average</th><th class="calcgraph">World<br>Target</th>
+          </tr>
+        </div>
+      </tbody>
+      </table>
+     <div class="resultspic"></div>
+      <table class="gentable resultsnotes"><tbody><tr><td>
+     <ul class="resultsbullets">
+      <br>
+      <li class="resultsbullets">The average footprint for people in India is 1.73 metric tons</li><li class="resultsbullets">The average for the European Union is about 6.4 metric tons</li><li class="resultsbullets">The average worldwide carbon footprint is about 5 metric tons</li><li class="resultsbullets">The worldwide target to combat climate change is 2 metric tons</li>
+    </ul>
+    </td></tr></tbody></table>
+    </div>	
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+          
+        </div>
+        
+    </div>
+  </div>
+  
+    
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+  </body>
+</html>
